@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+	<title>基于互联网数据的大数据分析</title>
+	<link rel="stylesheet" href="dist/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<script src="dist/jquery.min.js"></script>
+	<script src="dist/bootstrap.min.js"></script>
+	<script src="dist/echarts.min.js"></script>
+	<script src="dist/china.js"></script>
+
+</head>
+<body>
+<ul id="myTab" class="nav nav-tabs">
+	<li class="active">
+		<a href="#main_0" data-toggle="tab">
+			 工作经验与薪酬
+			 <!-- experience-salary.js -->
+		</a>
+	</li>
+	<li>
+		<a href="#main_1" data-toggle="tab">
+			计算机最高薪酬职位与需求量
+			<!-- highest_salary-post-requirement.js -->
+		</a>
+	</li>
+	<li>
+		<a href="#main_2" data-toggle="tab">
+			<!-- china-average_salary-distribution.html -->
+			全国（平均）薪资分布情况			 
+		</a>
+	</li>
+	<li>
+        <a href="#main_3" data-toggle="tab">
+			<!-- china-company-distribution_2.html -->
+			全国公司的城市分布
+        </a>
+    </li>
+	<li>
+        <a href="#main_4" data-toggle="tab">
+			<!-- hands-on background.html -->
+			工作经验要求比例
+        </a>
+    </li>
+	<li>
+        <a href="#main_5" data-toggle="tab">
+			<!-- education-backgroud.html -->
+			学历及工作经验与平均薪资关系
+        </a>
+    </li>
+
+	<li class="dropdown">
+		<a href="#" id="myTabDrop1" class="dropdown-toggle" 
+		   data-toggle="dropdown">大数据
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+			<li>
+				<a href="#menu_0" tabindex="-1" data-toggle="tab">
+					<!-- highest_city-requirement.js -->
+					 大数据需求职位最高城市和需求量
+				</a>
+			</li>
+			<li>
+				<a href="#menu_1" tabindex="-1" data-toggle="tab">
+					<!-- highest_requirement-big_data.js -->
+					大数据职位需求量最高的前10名行业
+				</a>	
+			</li>
+		</ul>
+	</li>
+</ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="main_0">
+		<!-- 工作经验与薪酬图表 -->
+		<!-- experience-salary.js -->
+		<div id="main0" style="width: 750px; height:500px;"></div>
+		<script src="js/experience-salary.js"></script>
+	</div>
+	<div class="tab-pane fade" id="main_1">
+		<!-- 计算机专业薪水最高的前10名招聘职位及其岗位需求量 -->
+		<!-- highest_salary-post-requirement.js -->
+		<div id="main1" style="width: 900px; height:500px;"></div>
+		<script src="js/highest_salary-post-requirement.js"></script>
+	</div>
+
+	<div class="tab-pane fade" id="main_2">
+		<!-- 全国（平均）薪资分布情况 -->
+		<!-- china-average_salary-distribution.html -->
+	<div id="china-map_0"></div>
+	<style>#china-map_0 {width:800px; height: 600px;margin: auto;}</style>
+    	<script src="js/china-average_salary-distribution.js"></script>
+	</div>
+	<div class="tab-pane fade" id="main_3">
+		<!-- 全国公司的城市分布 -->
+		<!-- china-company-distribution_2.html -->
+	<div id="china-map_1"></div>
+	<style>#china-map_1 {width:800px; height: 600px;margin: auto;}</style>
+    	<script src="js/china-company-distribution_2.js"></script>
+    	</div>
+	<div class="tab-pane fade" id="main_4">
+		<!-- 工作经验要求比例 -->
+		<!-- hands-on background.html -->
+		<div id="main4" style="width: 800px; height:600px;"></div>
+    		<script src="js/hands-on background.js"></script>
+    </div>
+	<div class="tab-pane fade" id="main_5">
+		<!-- 学历及工作经验与平均薪资关系 -->
+		<!-- education-backgroud.html -->
+		<div id="main5" style="width: 800px; height:600px;"></div>
+    		<script src="js/education-backgroud.js"></script>
+    </div>
+	<div class="tab-pane fade" id="main_6">
+		<!--  -->
+		<!--  -->
+
+    </div>
+
+	<div class="tab-pane fade" id="menu_0">
+		<!-- highest_city-requirement.js -->
+		<!-- 大数据需求职位最高城市和需求量 -->
+		<div id="menu0" style="width: 800px; height:600px;"></div>
+		<script src="js/highest_city-requirement.js"></script>
+	</div>
+	<div class="tab-pane fade" id="menu_1">
+		<!-- highest_requirement-big_data.js -->
+		<!-- 大数据职位需求量最高的前10名行业 -->
+		<div id="menu1" style="width: 1000px; height:500px;"></div>
+    		<script src="js/highest_requirement-big_data.js"></script>
+	</div>
+</div>
+
+</body>
+</html>

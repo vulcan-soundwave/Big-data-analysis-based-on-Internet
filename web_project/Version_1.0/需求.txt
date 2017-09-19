@@ -1,0 +1,6 @@
+图表1
+工作经验和薪资(min,max)的关系		--> 折柱图，experience-salary
+图表2
+计算机专业薪水最高的前10名招聘职位+岗位需求量	--> 折线图，highest_salary-post-requirement
+图表3
+大数据职位需求量最高的前10名城市	--> 极坐标系下的堆叠柱状图-polar-stack-radial, highest_city-requirement	+大城市的薪水最高的前六个岗位需求量排行

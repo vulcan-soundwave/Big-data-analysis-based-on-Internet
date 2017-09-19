@@ -1,0 +1,167 @@
+        var myChart = echarts.init(document.getElementById('main1'));
+	var jobData = [
+		'linux内核开发', '人工智能', '大数据工程师', '系统架构师', '算法架构师', '图像算法技术专家', '信息安全技术总监', 'DBA', '数据挖掘专家', 'AILab算法工程专家'
+	];
+
+	var option = {
+	    title: {
+		text: '计算机专业薪水最高的前10名招聘职位及其需求量',
+		x: 'center'
+	    },
+	    tooltip: {
+		trigger: 'axis',
+		type: 'cross',
+		axisPointer: {
+		    //animation: false
+		}
+	    },
+	    legend: {
+		data:['薪资','需求量'],
+		x: 'left'
+	    },
+	    toolbox: {
+		feature: {
+		    dataZoom: {
+		        yAxisIndex: 'none'
+		    },
+		    restore: {},
+		    saveAsImage: {}
+		}
+	    },
+	    axisPointer: {
+		link: {xAxisIndex: 'all'}
+	    },
+	    /*dataZoom: [
+		{
+		    show: true,
+		    realtime: true,
+		    start: 30,
+		    end: 70,
+		    xAxisIndex: [0, 1]
+		},
+		{
+		    type: 'inside',
+		    realtime: true,
+		    start: 30,
+		    end: 70,
+		    xAxisIndex: [0, 1]
+		}
+	    ],
+		*/
+	    grid: [{
+		left: 50,
+		right: 50,
+		height: '35%'
+	    }, {
+		left: 50,
+		right: 50,
+		top: '62%',
+		height: '35%'
+	    }],
+
+	    xAxis : [
+		{
+		    type : 'category',
+		    boundaryGap : false,
+		    axisLine: {onZero: true},
+		    axisLabel:{
+				interval: 0,		//make x axis show all info
+				//rotate: -30,		//-30 degree tilt
+				formatter:function(value)  
+                     {  
+                         var ret = "";//拼接加\n返回的类目项  
+                         var maxLength = 6;//每项显示文字个数  
+                         var valLength = value.length;//X轴类目项的文字个数  
+                         var rowN = Math.ceil(valLength / maxLength); //类目项需要换行的行数  
+                         if (rowN > 1)//如果类目项的文字大于3,  
+                         {  
+                             for (var i = 0; i < rowN; i++) {  
+                                 var temp = "";//每次截取的字符串  
+                                 var start = i * maxLength;//开始截取的位置  
+                                 var end = start + maxLength;//结束截取的位置  
+                                 //这里也可以加一个是否是最后一行的判断，但是不加也没有影响，那就不加吧  
+                                 temp = value.substring(start, end) + "\n";  
+                                 ret += temp; //凭借最终的字符串  
+                             }  
+                             return ret;  
+                         }  
+                         else {  
+                             return value;  
+                         }  
+                     } 
+			},
+		    data: jobData
+		},
+		{
+		    gridIndex: 1,
+		    type : 'category',
+		    boundaryGap : false,
+		    axisLine: {onZero: true},
+		    axisLabel:{
+				interval: 0,		//make x axis show all info
+				formatter:function(value)  
+                     {  
+                         var ret = "";//拼接加\n返回的类目项  
+                         var maxLength = 6;//每项显示文字个数  
+                         var valLength = value.length;//X轴类目项的文字个数  
+                         var rowN = Math.ceil(valLength / maxLength); //类目项需要换行的行数  
+                         if (rowN > 1)//如果类目项的文字大于3,  
+                         {  
+                             for (var i = 0; i < rowN; i++) {  
+                                 var temp = "";//每次截取的字符串  
+                                 var start = i * maxLength;//开始截取的位置  
+                                 var end = start + maxLength;//结束截取的位置  
+                                 //这里也可以加一个是否是最后一行的判断，但是不加也没有影响，那就不加吧  
+                                 temp = value.substring(start, end) + "\n";  
+                                 ret += temp; //凭借最终的字符串  
+                             }  
+                             return ret;  
+                         }  
+                         else {  
+                             return value;  
+                         }  
+                     } 
+			},
+		    data: jobData,
+		    position: 'top'
+		}
+	    ],
+	    yAxis : [
+		{
+		    name : '薪资(￥)',
+		    type : 'value',
+		    max : 100000
+		},
+		{
+		    gridIndex: 1,
+		    name : '需求量(位)',
+		    type : 'value',
+		    inverse: true
+		}
+	    ],
+	    series : [
+		{
+		    name:'薪资',
+		    type:'line',
+		    symbolSize: 8,
+		    //hoverAnimation: false,
+		    data:[
+			 100000, 95000, 92000, 90000, 88000, 82000, 80000, 75000, 60000, 58000
+		    ]
+		},
+		{
+		    name:'需求量',
+		    type:'line',
+		    xAxisIndex: 1,
+		    yAxisIndex: 1,
+		    symbolSize: 8,
+		    //hoverAnimation: false,
+		    data: [
+		        	0.32, 0.54, 0.68, 0.62, 0.87, 0.81, 0.82, 0.73, 0.62, 0.57
+		    ]
+		}
+	    ]
+	};
+
+        myChart.setOption(option);
+

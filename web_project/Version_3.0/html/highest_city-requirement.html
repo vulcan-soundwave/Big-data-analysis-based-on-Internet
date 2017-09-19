@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+	<script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 800px; height:600px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+		//app.title = '极坐标系下的堆叠柱状图';
+
+		var option = {
+		    title: {
+			text: '大数据职位需求量最高的前10名城市+大数据前六个岗位需求量排行',
+			x: 'center'
+		   },
+		    angleAxis: {
+		        type: 'category',
+		        data: ['北京', '广州', '上海', '杭州', '深圳', '成都', '武汉', '南京', '厦门', '长沙',],
+		        //z: 10
+				//z值小的图形会被z值大的图形覆盖。z相比zlevel优先级更低，而且不会创建新的 Canvas。
+		    },
+		    radiusAxis: {
+				type: 'value',
+				z: 9
+		    },
+		    polar: {
+		    },
+		    series: [{
+		        type: 'bar',
+		        data: [9, 1, 4, 0, 1, 0, 1, 0, 0, 0], 
+		        coordinateSystem: 'polar',
+		        name: '大数据分析',
+		        stack: 'a'	//数据堆叠，同个类目轴上系列配置相同的stack值可以堆叠放置
+		    }, {
+		        type: 'bar',
+		        data: [386, 30, 109, 38, 29, 3, 6, 10, 5, 0], 
+		        coordinateSystem: 'polar',
+		        name: '数据分析',
+		        stack: 'a'
+		    }, {
+		        type: 'bar',
+		        data: [1376, 27, 61, 43, 39, 2, 0, 15, 3, 9], 
+		        coordinateSystem: 'polar',
+		        name: '产品经理',
+		        stack: 'a'
+		    },{
+                type: 'bar',
+                data: [210, 0, 0, 10, 0, 0, 0, 0, 0, 0], 
+                coordinateSystem: 'polar',
+                name: '数据挖掘',
+                stack: 'a'
+            },{
+                type: 'bar',
+                data: [38, 5, 0, 1, 0, 4, 1, 5, 1, 1], 
+                coordinateSystem: 'polar',
+                name: '大数据开发',
+                stack: 'a'
+            },{
+                type: 'bar',
+		        data: [38, 5, 0, 1, 0, 4, 1, 5, 1, 1], 
+                coordinateSystem: 'polar',
+                name: '架构师',
+                stack: 'a'
+            }/*,{
+                type: 'bar',
+                data: [4000, 2000, 3000, 4000, 5000, 6000, 7000, 2000, 4000, 3000],
+                coordinateSystem: 'polar',
+                name: '第七大需求岗位',
+                stack: 'a'
+            },{
+                type: 'bar',
+                data: [1000, 2000, 3000, 4000, 5000, 6000, 7000, 3000, 2000, 3000],
+                coordinateSystem: 'polar',
+                name: '第八大需求岗位',
+                stack: 'a'
+            }*/],
+		    legend: {
+		        show: true,
+		        data: ['','','', '大数据分析', '数据分析', '产品经理', '数据挖掘', '大数据开发', '架构师',]
+		    }
+		};
+	
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
